@@ -49,7 +49,12 @@ function processFirstItem(stringList, callback) {
  * should return "There are 0".
 */
 function processLength(/* CODE HERE */) {
-  /* CODE HERE */
+  
+  
+
+  function processLength(list, callback) {
+
+    return callback(list.length);
 }
 
 /**
@@ -68,7 +73,10 @@ function processLength(/* CODE HERE */) {
 */
 function processLastItem(/* CODE HERE */) {
   /* CODE HERE */
-}
+function processLastItem(stringList, callback) {
+  // for(let i=0; i < stringList.length; i++)
+
+  return callback(stringList[stringList.length - 1]);
 
 /**
  * ### Challenge `processSum`
@@ -90,6 +98,13 @@ function processLastItem(/* CODE HERE */) {
 */
 function processSum(/* CODE HERE */) {
   /* CODE HERE */
+  function processSum(numberList, callback) {
+    let sum = 0
+    for (let i = 0; i < numberList.length; i++) {
+      sum += numberList[i];
+    }
+    return callback(sum)
+
 }
 
 /**
@@ -112,6 +127,8 @@ function processSum(/* CODE HERE */) {
 */
 function processProduct(/* CODE HERE */) {
   /* CODE HERE */
+  function processProduct(num1, num2, callback) {
+    return callback(num1 * num2)
 }
 
 /**
@@ -232,8 +249,14 @@ function stringSmash(/* code here */) {
  * @returns an array with all the runners' full names in the following format: "Smith, John".
  * The full names appear in the array in the same order the runners appear in the `runners` array.
 */
-function getFullNames(/* CODE HERE */) {
-  /* CODE HERE */
+function getFullNames("Smith, John") {
+  function getFullNames(runners) {
+    let fullNames = []
+    runners.forEach(function (runner) {
+      fullNames.push(`${runner.last_name}, ${runner.first_name}`)
+    })
+    return fullNames;
+  }
 }
 
 /**
@@ -248,8 +271,9 @@ function getFullNames(/* CODE HERE */) {
  * @returns an array with all the runners' first names in ALL CAPS.
  * The first names appear in the array in the same order the runners appear in the `runners` array.
 */
-function firstNamesAllCaps(/* CODE HERE */) {
-  /* CODE HERE */
+function firstNamesAllCaps(@param runners) {
+ function firstNamesAllCaps(runners) {
+   return runners.map(b => b.first_name.toUpperCase());
 }
 
 /**
